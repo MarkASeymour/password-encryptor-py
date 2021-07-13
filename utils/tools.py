@@ -20,6 +20,7 @@ def get_password_sources():
     f.close()
     return password_dict
 
+
 def get_source_from_line(line):
     end_index = line.index(':')
     source = line[0:end_index]
@@ -31,6 +32,7 @@ def get_encrypted_password_from_line(line):
     end_index = line.index('}')
     encrypted_password = line[start_index:end_index]
     return encrypted_password
+
 
 def print_list_of_sources(password_dict):
     keys_list = password_dict.keys()

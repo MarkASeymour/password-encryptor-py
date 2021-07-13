@@ -4,13 +4,22 @@ import utils.encryptor as encrypt
 import utils.tools as util
 import pyperclip as pc
 
+
 def greetings():
-    util.resource_file_initialization()
-    input_result = input('What do you wish to do? Press 1 to add a new password, press 2 to retrieve a password. -> ')
-    if input_result == "1":
-        add_new_password()
-    else:
-        retrieve_password()
+    on = True
+    while on:
+        util.resource_file_initialization()
+        print("PyPass - press 3 to exit")
+        input_result = input('What do you wish to do? Press 1 to add a new password, press 2 to retrieve a password. '
+                             '-> ')
+        if input_result == "1":
+            add_new_password()
+        elif input_result == "2":
+            retrieve_password()
+        elif input_result == "3":
+            on = False
+        else:
+            print("invalid input")
 
 
 def add_new_password():
