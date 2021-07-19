@@ -30,12 +30,12 @@ def add_new_password():
     key = encrypt.hash_password(passkey)
     encrypted_password = encrypt.encrypt_password(password_raw, key)
     output_string = password_for + ': {' + encrypted_password.decode() + '}\n'
-    f = open('resources-pypass/pypass-passwords.txt', 'w+')
+    f = open('resources-pypass/pypass-passwords.txt', 'a+')
     f.write(output_string)
     f.close()
 
 
-def retrieve_password(clipboard=None):
+def retrieve_password():
     source_password_dict = util.get_password_sources()
     passkey = input("Enter your passkey -> ")
     passkey = encrypt.hash_password(passkey)
